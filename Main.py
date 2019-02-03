@@ -33,7 +33,8 @@ def main():
 
     #       cv2.VideoCapture(0)         # open image cv2.imread("LicPlateImages/2.jpg")
     cap = cv2.VideoCapture(cv2.CAP_DSHOW)
-    ret, imgOriginalScene = cap.read()  # cv2.imread("LicPlateImages/2.jpg")
+    # ret, imgOriginalScene = cap.read()  # cv2.imread("LicPlateImages/2.jpg")
+    imgOriginalScene = cv2.imread("test_images/17.jpg")
 
     if imgOriginalScene is None:                            # if image was not read successfully
         # print error message to std out
@@ -76,14 +77,14 @@ def main():
         # end if
 
         # draw red rectangle around plate
-        #drawRedRectangleAroundPlate(imgOriginalScene, licPlate)
+        # drawRedRectangleAroundPlate(imgOriginalScene, licPlate)
 
         # write license plate text to std out
         print("\nlicense plate read from image = " + licPlate.strChars + "\n")
         print("----------------------------------------")
 
         # write license plate text on the image
-        #writeLicensePlateCharsOnImage(imgOriginalScene, licPlate)
+        # writeLicensePlateCharsOnImage(imgOriginalScene, licPlate)
 
         # re-show scene image
         cv2.imshow("imgOriginalScene", imgOriginalScene)
@@ -182,12 +183,11 @@ def writeLicensePlateCharsOnImage(imgOriginalScene, licPlate):
 
 ###################################################################################################
 if __name__ == "__main__":
-    while True:
+    # while True:
 
-        main()
+    main()
 
-        cv2.waitKey(3000)
+    cv2.waitKey(3000)
+    cv2.destroyAllWindows()
 
-        cv2.destroyAllWindows()
-
-        # cv2.waitKey(0)
+    # cv2.waitKey(0)
